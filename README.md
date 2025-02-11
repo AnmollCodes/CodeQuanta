@@ -48,7 +48,7 @@ Ensure you have the following installed:
 
 For any inquiries, please reach out to:
 
-- Email: vansh@gmail.com or chetanpunj481@gmail.com
+- Email: vansh250305@gmail.com or chetanpunj481@gmail.com
 
 ---
 
