@@ -48,8 +48,7 @@ Ensure you have the following installed:
 
 For any inquiries, please reach out to:
 
-- Email: abhik03mj@gmail.com or krishnendu19802@gmail.com
-- GitHub: [abhik2003](https://github.com/abhik2003) or [krishnendu19802](https://github.com/krishnendu19802)
+- Email: vansh@gmail.com or chetanpunj481@gmail.com
 
 ---
 
