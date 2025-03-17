@@ -22,14 +22,11 @@ def createToken(user, admin, id):
 
     return token
 
-# function for registering
 
 
 def register(data, user):
 
     try:
-        #  print(data)
-        # to check if email already exists
         checkUser=user.find_one({'email': data.get('email')})
         checkUser2=user.find_one({'userName': data.get('userName')})
         
@@ -59,13 +56,11 @@ def register(data, user):
         return {'code': 400, 'message': str(err)}
 
 
-# function for decoding the token for JWT based authentication
 def decodeToken(token):
     SECRET_KEY = 'CodeQuanta'
     # print(token)
     obj = {'message': '', 'code': '', 'user': ''}
 
-    # data = jwt.decode(token, SECRET_KEY, algorithms='HS256')
     try:
         decoded_data = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
         obj['message'] = 'Successfull'
@@ -78,7 +73,6 @@ def decodeToken(token):
             'userName':decoded_data['userName']
 
         }
-        # Adjust according to your User model
     except jwt.ExpiredSignatureError:
         obj['message'] = 'Token expired'
         obj['code'] = 401
@@ -100,7 +94,6 @@ def login(recv, user, admins):
     password = data['password'].encode('utf-8')
     try:
         myuser = user.find_one({'email': data.get('email')})
-        # print(myuser)
 
         if (myuser is not None):
             admin = admins.find_one({'email': data.get('email')})
@@ -125,7 +118,6 @@ def login(recv, user, admins):
             else:
                 obj['message'] = 'Wrong password'
                 obj['code'] = 400
-        #  print(obj)
             return obj
 
         else:
@@ -196,6 +188,7 @@ def addAdmin(data, admins, user):
                     'questionId': []
                 }
             })
+            
             admins.update_one(
                 {'userId': data.get('id')},
                 {'$push': {'adminsAdded': str(userBeingAdded['_id'])}}
